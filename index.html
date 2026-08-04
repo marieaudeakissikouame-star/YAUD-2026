@@ -19,9 +19,9 @@
 <section class="hero" role="banner" aria-label="Page d'accueil - Yoane et Marie-Aude">
   <div class="hero-content">
     <div class="hero-carousel">
-      <img src="https://raw.githubusercontent.com/konandriyoane-crypto/YAUD-2026-/main/Couple1.jpg" alt="Photo du couple - Yoane et Marie-Aude 1" class="carousel-img active" loading="lazy">
-      <img src="https://raw.githubusercontent.com/konandriyoane-crypto/YAUD-2026-/main/Couple2.jpg" alt="Photo du couple - Yoane et Marie-Aude 2" class="carousel-img" loading="lazy">
-      <img src="https://raw.githubusercontent.com/konandriyoane-crypto/YAUD-2026-/main/Couple3.jpg" alt="Photo du couple - Yoane et Marie-Aude 3" class="carousel-img" loading="lazy">
+      <img src="/Couple1.jpg" alt="Photo du couple - Yoane et Marie-Aude 1" class="carousel-img active" loading="lazy">
+      <img src="/Couple2.jpg" alt="Photo du couple - Yoane et Marie-Aude 2" class="carousel-img" loading="lazy">
+      <img src="/Couple3.jpg" alt="Photo du couple - Yoane et Marie-Aude 3" class="carousel-img" loading="lazy">
       <div class="carousel-dots">
         <button class="dot active" aria-label="Photo 1" onclick="goToSlide(0)"></button>
         <button class="dot" aria-label="Photo 2" onclick="goToSlide(1)"></button>
@@ -54,7 +54,7 @@
     <span>Saveurs</span>
   </button>
   <button class="nav-item" onclick="showSection('info')" aria-label="Informations utiles">
-    <span class="icon">💝</span>
+    <span class="icon">📍</span>
     <span>Infos</span>
   </button>
 </nav>
@@ -64,7 +64,7 @@
   <!-- Find Place Section -->
   <section id="find-place" class="content-section" aria-labelledby="find-place-heading">
     <div class="section-header">
-      <button class="btn-back" onclick="enterUniverse()" aria-label="Retour à l'accueil">← Accueil</button>
+      <button class="btn-back" onclick="goHome()" aria-label="Retour à l'accueil">← Accueil</button>
       <h2 id="find-place-heading">Trouver ma place</h2>
     </div>
     <div class="section-content">
@@ -84,7 +84,7 @@
   <!-- Flavors Section -->
   <section id="flavors" class="content-section" aria-labelledby="flavors-heading">
     <div class="section-header">
-      <button class="btn-back" onclick="enterUniverse()" aria-label="Retour à l'accueil">← Accueil</button>
+      <button class="btn-back" onclick="goHome()" aria-label="Retour à l'accueil">← Accueil</button>
       <h2 id="flavors-heading">Saveurs de notre réception</h2>
     </div>
     <div class="section-content">
@@ -135,23 +135,16 @@
   <!-- Info Section -->
   <section id="info" class="content-section" aria-labelledby="info-heading">
     <div class="section-header">
-      <button class="btn-back" onclick="enterUniverse()" aria-label="Retour à l'accueil">← Accueil</button>
+      <button class="btn-back" onclick="goHome()" aria-label="Retour à l'accueil">← Accueil</button>
       <h2 id="info-heading">Informations</h2>
     </div>
     <div class="section-content">
-      <div class="info-card">
-        <h3>💝 Les cadeaux</h3>
-        <p>Votre présence est le plus beau témoignage d'affection que nous puissions recevoir.</p>
-        <p>Pour ceux qui souhaiteraient nous offrir un présent, nous privilégions les cadeaux en espèces, afin de pouvoir les emporter plus facilement à notre retour à Dakar.</p>
-        <p>Un dispositif discret sera prévu lors de la réception.</p>
-        <p><strong>Merci du fond du cœur pour votre délicatesse.</strong></p>
-      </div>
 
       <div class="info-card">
         <h3>🗺️ Itinéraire</h3>
         <p>Menara Garden – Yopougon</p>
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.8844168193814!2d-4.009892!3d5.338956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eda4c89d0f0b1%3A0x8c3e3e8e8e8e8e8e!2sMenara%20Garden%20Yopougon!5e0!3m2!1sfr!2sci!4v1722789654321" 
+          src="https://www.google.com/maps?q=5.338956,-4.009892&hl=fr&z=15&output=embed"
           width="100%" 
           height="250" 
           style="border:0;border-radius:12px;margin:12px 0;" 
@@ -160,10 +153,12 @@
           referrerpolicy="no-referrer-when-downgrade"
           class="map-embed"
         ></iframe>
-        <a href="https://maps.app.goo.gl/PRT33PHSLhgVpBhR9" target="_blank" class="btn-secondary" aria-label="Ouvrir les directions dans Google Maps">
-          📱 Directions
-        </a>
-        <p class="note"><strong>⚠️</strong> Vérifiez les accès le jour du mariage - certaines voies peuvent être fermées.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+          <a href="https://maps.app.goo.gl/PRT33PHSLhgVpBhR9" target="_blank" class="btn-secondary" aria-label="Ouvrir la localisation dans Google Maps">📱 Ouvrir la localisation</a>
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Station+Lubrafrique&destination=5.338956,-4.009892&travelmode=driving" target="_blank" class="btn-primary" aria-label="Itinéraire recommandé voiture">🚗 Itinéraire recommandé (voiture)</a>
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Station+Lubrafrique&destination=5.338956,-4.009892&travelmode=walking" target="_blank" class="btn-secondary" aria-label="Itinéraire piéton">🚶 Itinéraire piéton</a>
+        </div>
+        <p class="note" style="margin-top:10px;"><strong>Itinéraire conseillé :</strong> En raison de travaux et de voies ponctuellement fermées, privilégiez la voie qui rejoint la Cité Verte après la station Lubrafrique. Ouvrez l’itinéraire recommandé pour lancer la navigation.</p>
       </div>
     </div>
   </section>
