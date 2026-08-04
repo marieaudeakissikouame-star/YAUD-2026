@@ -23,9 +23,9 @@
       <img src="Couple2.jpg" alt="Photo du couple - Yoane et Marie-Aude 2" class="carousel-img" loading="lazy">
       <img src="Couple3.jpg" alt="Photo du couple - Yoane et Marie-Aude 3" class="carousel-img" loading="lazy">
       <div class="carousel-dots">
-        <button class="dot active" aria-label="Photo 1"></button>
-        <button class="dot" aria-label="Photo 2"></button>
-        <button class="dot" aria-label="Photo 3"></button>
+        <button class="dot active" aria-label="Photo 1" onclick="goToSlide(0)"></button>
+        <button class="dot" aria-label="Photo 2" onclick="goToSlide(1)"></button>
+        <button class="dot" aria-label="Photo 3" onclick="goToSlide(2)"></button>
       </div>
     </div>
 
@@ -54,7 +54,7 @@
     <span>Saveurs</span>
   </button>
   <button class="nav-item" onclick="showSection('info')" aria-label="Informations utiles">
-    <span class="icon">📍</span>
+    <span class="icon">💝</span>
     <span>Infos</span>
   </button>
 </nav>
@@ -64,7 +64,7 @@
   <!-- Find Place Section -->
   <section id="find-place" class="content-section" aria-labelledby="find-place-heading">
     <div class="section-header">
-      <button class="btn-back" onclick="goHome()" aria-label="Retour à l'accueil">← Accueil</button>
+      <button class="btn-back" onclick="enterUniverse()" aria-label="Retour à l'accueil">← Accueil</button>
       <h2 id="find-place-heading">Trouver ma place</h2>
     </div>
     <div class="section-content">
@@ -75,8 +75,8 @@
         placeholder="Entrez votre nom..." 
         aria-label="Rechercher votre nom dans la liste des invités"
         autocomplete="off"
-        oninput="searchTable(this.value)"
       >
+      <div id="searchStatus" class="search-status" aria-live="polite"></div>
       <div id="result" class="result-box" role="status" aria-live="polite" aria-atomic="true"></div>
     </div>
   </section>
@@ -84,7 +84,7 @@
   <!-- Flavors Section -->
   <section id="flavors" class="content-section" aria-labelledby="flavors-heading">
     <div class="section-header">
-      <button class="btn-back" onclick="goHome()" aria-label="Retour à l'accueil">← Accueil</button>
+      <button class="btn-back" onclick="enterUniverse()" aria-label="Retour à l'accueil">← Accueil</button>
       <h2 id="flavors-heading">Saveurs de notre réception</h2>
     </div>
     <div class="section-content">
@@ -135,28 +135,35 @@
   <!-- Info Section -->
   <section id="info" class="content-section" aria-labelledby="info-heading">
     <div class="section-header">
-      <button class="btn-back" onclick="goHome()" aria-label="Retour à l'accueil">← Accueil</button>
+      <button class="btn-back" onclick="enterUniverse()" aria-label="Retour à l'accueil">← Accueil</button>
       <h2 id="info-heading">Informations</h2>
     </div>
     <div class="section-content">
+      <div class="info-card">
+        <h3>💝 Les cadeaux</h3>
+        <p>Votre présence est le plus beau témoignage d'affection que nous puissions recevoir.</p>
+        <p>Pour ceux qui souhaiteraient nous offrir un présent, nous privilégions les cadeaux en espèces, afin de pouvoir les emporter plus facilement à notre retour à Dakar.</p>
+        <p>Un dispositif discret sera prévu lors de la réception.</p>
+        <p><strong>Merci du fond du cœur pour votre délicatesse.</strong></p>
+      </div>
 
       <div class="info-card">
-        <h3>🗺️ Itinéraire recommandé</h3>
+        <h3>🗺️ Itinéraire</h3>
         <p>Menara Garden – Yopougon</p>
-        <iframe 
-          src="https://www.google.com/maps?q=5.338956,-4.009892&hl=fr&z=15&output=embed"
-          width="100%" 
-          height="250" 
-          style="border:0;border-radius:12px;margin:12px 0;" 
-          allowfullscreen="" 
-          loading="lazy" 
+        <iframe
+          src="https://www.google.com/maps?q=5.338956,-4.009892&z=17&output=embed"
+          width="100%"
+          height="250"
+          style="border:0;border-radius:12px;margin:12px 0;"
+          allowfullscreen=""
+          loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           class="map-embed"
         ></iframe>
-        <div style="margin-top:8px;">
-          <a href="https://maps.app.goo.gl/PRT33PHSLhgVpBhR9" target="_blank" class="btn-secondary" aria-label="Ouvrir la localisation dans Google Maps">📱 Ouvrir la localisation</a>
-        </div>
-        <p class="note" style="margin-top:10px;"><strong>Itinéraire conseillé :</strong> Pour rejoindre Menara Garden, passez par Station Lubrafrique puis Saint Mathieu, prenez la direction de la Cité Verte et suivez les panneaux vers Menara Garden. Ouvrez la localisation pour lancer la navigation.</p>
+        <a href="https://maps.app.goo.gl/PRT33PHSLhgVpBhR9" target="_blank" class="btn-secondary" aria-label="Ouvrir les directions dans Google Maps">
+          📱 Directions
+        </a>
+        <p class="note"><strong>⚠️</strong> Vérifiez les accès le jour du mariage - certaines voies peuvent être fermées.</p>
       </div>
     </div>
   </section>
