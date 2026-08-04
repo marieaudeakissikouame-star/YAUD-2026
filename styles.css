@@ -87,8 +87,10 @@ body {
   top: 8px;
   width: calc(100% - 16px);
   height: calc(100% - 16px);
-  object-fit: cover;
+  /* Use contain to show the full image (no crop) while keeping a neutral background */
+  object-fit: contain;
   object-position: center center;
+  background: var(--color-light);
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.5s ease;
   border-radius: 12px; /* rounded inside the frame */
