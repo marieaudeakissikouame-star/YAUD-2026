@@ -204,8 +204,9 @@ body {
 .nav-item { background: transparent; border: none; padding: 10px 14px; border-radius: 28px; cursor: pointer; display: flex; gap: 8px; align-items: center; }
 
 /* === APP CONTENT === */
-.app-container { padding: 20px; display: none; }
-.app-container.hidden { display: none; }
+/* allow JS to control visibility using .hidden */
+.app-container { padding: 20px; display: block; }
+.app-container.hidden { display: none !important; }
 
 .content-section { display: none; flex-direction: column; gap: 12px; }
 .content-section[aria-hidden="false"] { display: flex; }
